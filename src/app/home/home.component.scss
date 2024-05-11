@@ -1,0 +1,259 @@
+@import '../../variables.scss';
+@import '../../palette.scss';
+@import '../../typo.scss';
+
+.main-container{
+  @include flex-col;
+  .top-bar{
+    width: 100%;
+    background-color: #fff;
+    @include menuItem;
+    @include flex-row;
+    align-items: center;
+    justify-content: space-around;
+    height: 142px;
+    position: fixed;
+    z-index: -1;
+    color: $primaryColor;
+    .item{
+      cursor:pointer;
+    }
+  }
+  .intro-block{
+    margin-top: 142px;
+    padding: 120px;
+    height: calc(100vh - 142px);
+    background-image: url('../../assets/images/background3.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex-row-center;
+    .intro-title{
+      @include titleL;
+      @include flex-row-center;
+      border-radius: 200px;
+      background-color: #fff;
+      padding: 0px 64px;
+
+    }
+  }
+  .photo-part{
+    @include flex-col;
+    min-height: calc(100vh - 142px);
+    .top-part{
+      padding: 120px;
+      min-height: 50%;
+      width: 100%;
+      color: #fff;
+      background: rgb(255,255,255);
+      background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(138,155,142,1) 31%);
+      @include flex-col;
+      align-items: center;
+      .title{
+        @include titleL;
+        margin-bottom: 24px;
+      }
+      .subtitle{
+        @include paragraphL;
+        text-align: center;
+        margin-bottom: 80px;
+      }
+      .central-photo{
+        background-color: lightgoldenrodyellow;
+        margin-bottom: 80px;
+      }
+      .last-text{
+        color: $primaryColor;
+      }
+    }
+
+  }
+  .count-down-block{
+    padding: 120px;
+    background-image: url('../../assets/images/backgroundplain.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $primaryColor;
+    @include flex-col;
+    align-items: center;
+    .title{
+      @include titleL;
+      margin-bottom: 80px;
+    }
+    .count-down-part{
+      @include flex-row;
+      align-items: center;
+      .countdown-item{
+        @include flex-col-center;
+        padding: 0px 80px;
+        border-left: 0.68px solid $primaryColor;
+        .title{
+          @include subtitleL;
+          margin-bottom: 12px;
+        }
+        .number{
+          @include titleL;
+        }
+      }
+      .countdown-item:first-child{
+        border-left: none;
+      }
+    }
+  }
+  .location-block{
+    padding: 48px 0px 0px 0px;
+    @include flex-col-center;
+    background-color: #fff;
+    .info-part{
+      padding: 0px 120px;
+      @include flex-col-center;
+      .img-container{
+        width: 250px;
+        height: 250px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .title{
+        @include titleL;
+        margin-bottom: 80px;
+        @include flex-row-center;
+      }
+      .name-location{
+        @include flex-row-center;
+        @include subtitleL;
+        margin-bottom: 28px;
+
+      }
+      .specs{
+        @include paragraphL;
+        @include flex-col-center;
+        gap: 4px;
+      }
+      .button-part{
+        @include flex-row-center;
+        width: 100%;
+        margin-top: 80px;
+        .button{
+          @include button-classic;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .maps-part{
+      background-image: url('../../assets/images/map.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 600px;
+      width: 100%;
+      margin-top: 24px;
+    }
+  }
+  .gifts-block{
+    padding: 120px;
+    background-image: url('../../assets/images/backgroundplain.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flex-col-center;
+    color:$primaryColor;
+
+    .image-container{
+      width: 250px;
+      height: 250px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .title{
+      @include titleL;
+      margin-bottom: 28px;
+      @include flex-row-center;
+    }
+    .subtitle{
+      @include paragraphL;
+      @include flex-row-center;
+    }
+    .iban-part{
+      @include subtitleL;
+      margin: 80px 0px;
+    }
+    .button-container{
+      @include flex-row-center;
+      width: 100%;
+
+      .button{
+        @include button-classic;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .contacts-block{
+    padding: 120px;
+    color: $primaryColor;
+    background-color: #fff;
+    .title{
+      @include titleL;
+      margin-bottom: 28px;
+      @include flex-row-center;
+    }
+    .subtitle{
+      @include paragraphL;
+      @include flex-row-center;
+    }
+    .contact-divide{
+      margin-top: 80px;
+      @include flex-row;
+      justify-content: center;
+      width: 100%;
+      .simone,.arianna{
+        @include flex-col-center;
+        padding: 0px 80px;
+        .title{
+          @include subtitleL;
+          margin-bottom: 24px;
+        }
+        .tel-number{
+          @include paragraphL;
+        }
+      }
+      .simone{
+        border-right: 0.68px solid $primaryColor;
+      }
+    }
+  }
+  .footer-part{
+    @include flex-row;
+    background-image: url('../../assets/images/bottom-img.svg');
+    background-position: bottom;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    height: 600px;
+    width: 100%;
+    color:$primaryColor;
+    justify-content: center;
+    .return-to-top{
+      @include flex-col-center;
+      cursor: pointer;
+      height: fit-content;
+      .image{
+        width: 42px;
+        height: 42px;
+        margin-bottom: 32px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .button-top{
+        @include buttonL;
+        cursor: pointer;
+      }
+    }
+  }
+}

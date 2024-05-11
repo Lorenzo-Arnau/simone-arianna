@@ -2,3 +2,13 @@
 @import '../src/palette.scss';
 @import '../src/typo.scss';
 @import '../src/variables.scss';
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+

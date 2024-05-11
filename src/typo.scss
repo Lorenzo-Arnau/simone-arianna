@@ -1,3 +1,54 @@
-@import '../src/palette.scss';
-@import '../src/typo.scss';
 @import '../src/variables.scss';
+
+.cormorant {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin titleL{
+  font-family: "Cormorant Upright", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 100px;
+  line-height: 120px;
+}
+@mixin subtitleL {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 42px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@mixin menuItem {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@mixin paragraphL {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 42px;
+  letter-spacing: 2px;
+}
+@mixin buttonL{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 2px;
+}

@@ -1,3 +1,46 @@
-@import '../src/palette.scss';
-@import '../src/typo.scss';
-@import '../src/variables.scss';
+@mixin flex-row{
+  display: flex;
+}
+@mixin flex-col{
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex-row-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flex-col-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin button-classic{
+  @include buttonL;
+  min-width: 234px;
+  padding: 0px 20px;
+  height: 72px;
+  border-radius: 200px;
+  @include flex-row-center;
+  color: $primaryColor;
+  border: 0.68px solid $primaryColor;
+  cursor: pointer;
+  &:hover{
+    background-color: $primaryColorHover;
+  }
+}
+@mixin button-white{
+  @include buttonL;
+  min-width: 234px;
+  padding: 0px 20px;
+  height: 72px;
+  border-radius: 200px;
+  @include flex-row-center;
+  color: #fff;
+  border: 0.68px solid #fff;
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
