@@ -1,11 +1,11 @@
+<div class="top-bar">
+  <div class="item intro-item" (click)="scrollTo('photo-part')">Intro</div>
+  <div class="item count-item" (click)="scrollTo('count-down-block')">count down</div>
+  <div class="item location-item" (click)="scrollTo('location-block')">location</div>
+  <div class="item gifts-item" (click)="scrollTo('gifts-block')">idee regalo</div>
+  <div class="item contacts-item" (click)="scrollTo('contacts-block')">contatti</div>
+</div>
 <div class="main-container">
-  <div class="top-bar">
-    <div class="item intro-item">Intro</div>
-    <div class="item count-item">count down</div>
-    <div class="item location-item">location</div>
-    <div class="item gifts-item">idee regalo</div>
-    <div class="item contacts-item">contatti</div>
-  </div>
   <div class="block intro-block">
     <div class="intro-title">
       Arianna & Simone
@@ -92,7 +92,7 @@
       IT22INGB7527421754
     </div>
     <div class="button-container">
-      <div class="button">
+      <div class="button" (click)="goOnPaypal()">
         Usa paypal
       </div>
     </div>
@@ -116,7 +116,7 @@
     </div>
   </div>
   <div class="footer-part">
-    <div class="return-to-top">
+    <div class="return-to-top" (click)="scrollTo('intro-block')">
       <div class="image">
         <img src="assets/images/arrow-up.svg" alt="">
       </div>

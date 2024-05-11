@@ -2,25 +2,26 @@
 @import '../../palette.scss';
 @import '../../typo.scss';
 
+.top-bar{
+  width: 100%;
+  background-color: #fff;
+  @include menuItem;
+  @include flex-row;
+  align-items: center;
+  justify-content: space-around;
+  height: 142px;
+  position: fixed;
+  top:0px;
+  z-index: -1;
+  color: $primaryColor;
+  .item{
+    cursor:pointer;
+  }
+}
 .main-container{
   @include flex-col;
-  .top-bar{
-    width: 100%;
-    background-color: #fff;
-    @include menuItem;
-    @include flex-row;
-    align-items: center;
-    justify-content: space-around;
-    height: 142px;
-    position: fixed;
-    z-index: -1;
-    color: $primaryColor;
-    .item{
-      cursor:pointer;
-    }
-  }
+  margin-top: 142px;
   .intro-block{
-    margin-top: 142px;
     padding: 120px;
     height: calc(100vh - 142px);
     background-image: url('../../assets/images/background3.svg');
