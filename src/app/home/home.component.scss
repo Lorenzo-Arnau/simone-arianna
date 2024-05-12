@@ -44,7 +44,8 @@
       border-radius: 200px;
       background-color: #fff;
       padding: 0px 64px;
-      text-align: center
+      text-align: center;
+      color: $primaryColor;
 
     }
   }
@@ -85,6 +86,7 @@
       }
       .last-text{
         color: $primaryColor;
+        @include paragraphL;
       }
     }
 
