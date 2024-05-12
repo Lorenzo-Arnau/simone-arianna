@@ -17,6 +17,10 @@
   font-style: normal;
   font-size: 100px;
   line-height: 120px;
+  @media screen and (max-width:1264px) {
+    font-size: 50px;
+    line-height: 60px;
+  }
 }
 @mixin subtitleL {
   font-family: "Montserrat", sans-serif;
@@ -26,6 +30,10 @@
   line-height: 42px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  @media screen and (max-width:1264px) {
+    font-size: 20px;
+    line-height: 21px;
+  }
 }
 @mixin menuItem {
   font-family: "Montserrat", sans-serif;
@@ -35,6 +43,10 @@
   line-height: 22px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  @media screen and (max-width:1264px) {
+    font-size: 11px;
+    line-height: 11px;
+  }
 }
 @mixin paragraphL {
   font-family: "Montserrat", sans-serif;
@@ -43,6 +55,10 @@
   font-size: 28px;
   line-height: 42px;
   letter-spacing: 2px;
+  @media screen and (max-width:1264px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 @mixin buttonL{
   font-family: "Montserrat", sans-serif;
@@ -51,4 +67,8 @@
   font-size: 24px;
   line-height: 32px;
   letter-spacing: 2px;
+  @media screen and (max-width:1264px) {
+    font-size: 12px;
+    line-height: 16px;
+  }
 }

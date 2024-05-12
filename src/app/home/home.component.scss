@@ -17,10 +17,16 @@
   .item{
     cursor:pointer;
   }
+  @media screen and (max-width:958px) {
+   display: none;
+ }
 }
 .main-container{
   @include flex-col;
   margin-top: 142px;
+  @media screen and (max-width:958px) {
+    margin-top: 0px;
+  }
   .intro-block{
     padding: 120px;
     height: calc(100vh - 142px);
@@ -29,12 +35,16 @@
     background-size: cover;
     background-repeat: no-repeat;
     @include flex-row-center;
+    @media screen and (max-width:576px) {
+     padding: 64px
+    }
     .intro-title{
       @include titleL;
       @include flex-row-center;
       border-radius: 200px;
       background-color: #fff;
       padding: 0px 64px;
+      text-align: center
 
     }
   }
@@ -50,18 +60,28 @@
       background: linear-gradient(0deg, rgba(255,255,255,1) 30%, rgba(138,155,142,1) 31%);
       @include flex-col;
       align-items: center;
+      @media screen and (max-width:576px) {
+        padding: 64px
+       }
       .title{
         @include titleL;
         margin-bottom: 24px;
+        text-align: center
       }
       .subtitle{
         @include paragraphL;
         text-align: center;
         margin-bottom: 80px;
+        text-align: center
       }
       .central-photo{
         background-color: lightgoldenrodyellow;
         margin-bottom: 80px;
+        max-width: 100%;
+        img{
+          max-width: 100%;
+          height: 100%;
+        }
       }
       .last-text{
         color: $primaryColor;
@@ -78,17 +98,28 @@
     color: $primaryColor;
     @include flex-col;
     align-items: center;
+    @media screen and (max-width:576px) {
+      padding: 64px
+     }
     .title{
       @include titleL;
       margin-bottom: 80px;
+      text-align: center
     }
     .count-down-part{
       @include flex-row;
       align-items: center;
+      @media screen and (max-width:958px) {
+        @include flex-col;
+     }
       .countdown-item{
         @include flex-col-center;
         padding: 0px 80px;
         border-left: 0.68px solid $primaryColor;
+        @media screen and (max-width:958px) {
+          border-left:none;
+          margin: 12px 0px;
+        }
         .title{
           @include subtitleL;
           margin-bottom: 12px;
@@ -109,6 +140,10 @@
     .info-part{
       padding: 0px 120px;
       @include flex-col-center;
+      text-align: center;
+      @media screen and (max-width:576px) {
+        padding:0px 64px
+       }
       .img-container{
         width: 250px;
         height: 250px;
@@ -121,11 +156,13 @@
         @include titleL;
         margin-bottom: 80px;
         @include flex-row-center;
+        text-align: center;
       }
       .name-location{
         @include flex-row-center;
         @include subtitleL;
         margin-bottom: 28px;
+        text-align: center;
 
       }
       .specs{
@@ -161,7 +198,9 @@
     background-repeat: no-repeat;
     @include flex-col-center;
     color:$primaryColor;
-
+    @media screen and (max-width:576px) {
+      padding: 64px
+     }
     .image-container{
       width: 250px;
       height: 250px;
@@ -174,14 +213,17 @@
       @include titleL;
       margin-bottom: 28px;
       @include flex-row-center;
+      text-align: center;
     }
     .subtitle{
       @include paragraphL;
       @include flex-row-center;
+      text-align: center;
     }
     .iban-part{
       @include subtitleL;
       margin: 80px 0px;
+      text-align: center;
     }
     .button-container{
       @include flex-row-center;
@@ -197,33 +239,51 @@
     padding: 120px;
     color: $primaryColor;
     background-color: #fff;
+    @media screen and (max-width:576px) {
+      padding: 64px
+     }
     .title{
       @include titleL;
       margin-bottom: 28px;
       @include flex-row-center;
+      text-align: center;
     }
     .subtitle{
       @include paragraphL;
       @include flex-row-center;
+      text-align: center;
     }
     .contact-divide{
       margin-top: 80px;
       @include flex-row;
       justify-content: center;
       width: 100%;
+      @media screen and (max-width:576px) {
+        @include flex-col;
+     }
       .simone,.arianna{
         @include flex-col-center;
         padding: 0px 80px;
+        @media screen and (max-width:576px) {
+          border:none;
+          margin: 12px 0px;
+        }
         .title{
           @include subtitleL;
           margin-bottom: 24px;
+          text-align: center;
         }
         .tel-number{
           @include paragraphL;
+          text-align: center;
         }
       }
       .simone{
         border-right: 0.68px solid $primaryColor;
+        @media screen and (max-width:576px) {
+          border:none;
+          margin: 12px 0px;
+        }
       }
     }
   }
@@ -238,6 +298,10 @@
     width: 100%;
     color:$primaryColor;
     justify-content: center;
+    @media screen and (max-width:576px) {
+      background-size: contain;
+      height: 250px;
+    }
     .return-to-top{
       @include flex-col-center;
       cursor: pointer;
