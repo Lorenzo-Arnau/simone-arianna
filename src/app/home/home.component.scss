@@ -171,11 +171,12 @@
         @include paragraphL;
         @include flex-col-center;
         gap: 4px;
+        margin-bottom: 28px;
       }
       .button-part{
         @include flex-row-center;
         width: 100%;
-        margin-top: 80px;
+        // margin-top: 80px;
         .button{
           @include button-classic;
           text-transform: uppercase;
@@ -183,13 +184,15 @@
       }
     }
     .maps-part{
-      background-image: url('../../assets/images/map.png');
+      background-image: url('../../assets/images/mappa-chiesa.png');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       min-height: 600px;
       width: 100%;
       margin-top: 24px;
+      // Ho aggiunto questo filtro, è il più acquerelloso e pastelloto che sono riuscito ad applicare
+      filter: saturate(200%) grayscale(40%) contrast(120%) brightness(96%);
     }
   }
   .gifts-block{

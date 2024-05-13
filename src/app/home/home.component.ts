@@ -14,6 +14,9 @@ export class HomeComponent implements OnInit,DoCheck{
   secs:any=0;
   isBrowser = signal(false);
 
+  emailSimone = "gsmakeup92@gmail.com";
+  emailArianna = "arianna.mostardi@gmail.com";
+
   constructor(@Inject(PLATFORM_ID) platformId: object){
     this.isBrowser.set(isPlatformBrowser(platformId));
   }
@@ -58,7 +61,8 @@ export class HomeComponent implements OnInit,DoCheck{
 
   }
   goOnGoogleMaps(){
-    window.open( 'https://maps.app.goo.gl/ThC1hDCYsd8nLbLN7','BLANK')
+    // Modificato link location
+    window.open( 'https://maps.app.goo.gl/91RiugUD17GoKoue8','BLANK')
 
   }
 }

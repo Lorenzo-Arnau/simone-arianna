@@ -14,11 +14,12 @@
   <div class="block photo-part">
     <div class="top-part">
       <div class="title">
-        Ha detto si !
+        Ci sposiamo !
       </div>
+      <!-- Modificato testo intro -->
       <div class="subtitle">
-        Dopo anni insieme è arrivato il momento del grande passo.
-        Ci sposiamo e vogliamo condividere questo momento con amici e famiglia
+        Sono passati diversi anni dal giorno in cui ci siamo conosciuti e adesso siamo arrivati al momento del grande
+        passo. Ci sposiamo! Siamo felicissimi di condividere questa splendida notizia con tutti voi!
       </div>
       <div class="central-photo">
         <img src="assets/images/sunflower.svg" alt="">
@@ -59,13 +60,16 @@
       <div class="title">
         Vi aspettiamo il 29 Giugno!
       </div>
+      <!-- Aggiunto un div -->
+      <div class="specs">
+        <span>La cerimonia si svolgerà presso:</span>
+      </div>
       <div class="name-location">
-        NOME LOCATION - H.12.00
+        Chiesa Santa Maria - H.10:30
       </div>
       <div class="specs">
-        <span>via canale 10</span>
-        <span>castello d'agliano 10499</span>
-        <span>Genova (GE)</span>
+        <span>Via della Chiesa 1</span>
+        <span>Peveragno CN 12016</span>
       </div>
       <div class="button-part">
         <div class="button" (click)="goOnGoogleMaps()">
@@ -73,9 +77,8 @@
         </div>
       </div>
     </div>
-    <div class="maps-part">
-
-    </div>
+    <!-- Immagine location chiesa aggiunta -->
+    <div class="maps-part"></div>
   </div>
   <div class="block gifts-block">
     <div class="image-container">
@@ -86,16 +89,17 @@
     </div>
     <div class="subtitle">
       Non impazzite a cercare cornici, piante o soprammobili
-        da regalarci, c’è un’alternativa più semplice!
+      da regalarci, c’è un’alternativa più semplice!
     </div>
     <div class="iban-part">
-      IT22INGB7527421754
+      LT023250083769138438
     </div>
-    <div class="button-container">
+    <!-- Ho tolto per il momento il bottone paypal perché ho un problema con il link, nel caso lasciamo solo l'IBAN -->
+    <!-- <div class="button-container">
       <div class="button" (click)="goOnPaypal()">
         Usa paypal
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="block contacts-block">
     <div class="title">
@@ -107,11 +111,13 @@
     <div class="contact-divide">
       <div class="simone">
         <div class="title">SIMONE</div>
-        <div class="tel-number">+34587438743</div>
+        <!-- Inserita mail al posto del numero -->
+        <div class="tel-number">{{emailSimone}}</div>
       </div>
       <div class="arianna">
         <div class="title">ARIANNA</div>
-        <div class="tel-number">+34587438743</div>
+        <!-- Inserita mail al posto del numero -->
+        <div class="tel-number">{{emailArianna}}</div>
       </div>
     </div>
   </div>
