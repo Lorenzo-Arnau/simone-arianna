@@ -87,6 +87,7 @@
       .last-text{
         color: $primaryColor;
         @include paragraphL;
+        text-align: center;
       }
     }
 
