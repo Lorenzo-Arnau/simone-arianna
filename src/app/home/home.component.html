@@ -1,7 +1,7 @@
 <div class="top-bar">
   <div class="item intro-item" (click)="scrollTo('photo-part')">Intro</div>
   <div class="item count-item" (click)="scrollTo('count-down-block')">Conto alla rovescia</div>
-  <div class="item location-item" (click)="scrollTo('location-block')">location</div>
+  <div class="item location-item" (click)="scrollTo('location-block')">Foto</div>
   <div class="item gifts-item" (click)="scrollTo('gifts-block')">idee regalo</div>
   <div class="item contacts-item" (click)="scrollTo('contacts-block')">contatti</div>
 </div>
@@ -14,32 +14,35 @@
   <div class="block photo-part">
     <div class="top-part">
       <div class="title">
-        Ci sposiamo !
+        Ci siamo sposati (finalmente) !
       </div>
       <!-- Modificato testo intro -->
       <div class="subtitle">
-        Era il 15 ottobre 2006 il giorno in cui ci siamo conosciuti e adesso siamo arrivati al momento del grande
-        passo. Ci sposiamo! Siamo felicissimi di condividere questa splendida notizia con tutti voi!
+        Ci siamo sposati il 29/06/2024 alla chiesa di Peveragno! E' stata una cerimonia bellissima ricca di emozioni e divertimento, dove
+        amici e famiglia hanno partecipato alla nostra felicità,e al nostro "Per Sempre"
       </div>
       <div class="central-photo">
-        <img src="assets/images/picnic.jpg" alt="">
+        <img src="assets/images/married.jpg" alt="">
       </div>
       <!-- <div class="last-text">
         Continuazione testo romantico e commuovente
       </div> -->
       <div class="last-text">
-        Dalla foto che vedete sopra sono trascorsi diversi anni ormai, volevamo dedicare questa pagina a tutte le persone che
-        ci hanno visto crescere e che ci hanno sostenuto in questo percorso.
-        Dopo il matrimonio su questa pagina potrete trovare le foto della cerimonia e del ricevimento in modo tale da
+        Volevamo dedicare questa pagina a tutte le persone che
+        ci hanno visto crescere e che ci hanno sostenuto in questo percorso.A chi ha partecipato al matrimonio e a chi , purtroppo , non cè più.
+        A breve su questa pagina potrete trovare le foto della cerimonia e del ricevimento in modo tale da
         poter ricordare assieme il giorno che ha consolidato il nostro amore.
       </div>
     </div>
   </div>
   <div class="block count-down-block">
     <div class="title">
-      Manca Poco
+      Just Married!
     </div>
-    <div class="count-down-part">
+    <div class="title">
+      29/06/2024
+    </div>
+   <!-- <div class="count-down-part">
       <div class="countdown-item">
         <div class="title">giorni</div>
         <div class="number" id="days">{{days}}</div>
@@ -57,6 +60,7 @@
         <div class="number" id="secs">{{secs}}</div>
       </div>
     </div>
+    -->
   </div>
   <div class="block location-block">
     <div class="info-part">
@@ -64,27 +68,28 @@
         <img src="assets/images/sunflower.svg" alt="">
       </div>
       <div class="title">
-        Vi aspettiamo il 29 Giugno!
+        Foto
       </div>
       <!-- Aggiunto un div -->
-      <div class="specs">
-        <span>La cerimonia si svolgerà presso:</span>
+      <ngx-slick-carousel class="carousel"
+      #slickModal="slick-carousel"
+      [config]="config"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)">
+      <div ngxSlickItem *ngFor="let slide of images" class="slide">
+        <img src="{{ slide.image }}" alt="" width="400px" class="image-slide">
       </div>
-      <div class="name-location">
-        Chiesa Santa Maria - H.10:30
-      </div>
-      <div class="specs">
-        <span>Via della Chiesa 1</span>
-        <span>Peveragno CN 12016</span>
-      </div>
-      <div class="button-part">
-        <div class="button" (click)="goOnGoogleMaps()">
-          Vedi su google maps
+      </ngx-slick-carousel>
+      <div class="button-part" style="margin-top: 12px;">
+        <div class="button" (click)="downloadImage()">
+          Scarica le foto
         </div>
       </div>
     </div>
     <!-- Immagine location chiesa aggiunta -->
-    <div class="maps-part"></div>
+    <!--<div class="maps-part"></div> -->
   </div>
   <div class="block gifts-block">
     <div class="image-container">

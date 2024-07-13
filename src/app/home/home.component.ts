@@ -1,6 +1,8 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, DoCheck, Inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { interval, mergeMap, timer } from 'rxjs';
+import { HomeService } from './home-service.service';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +16,36 @@ export class HomeComponent implements OnInit,DoCheck{
   secs:any=0;
   isBrowser = signal(false);
 
+  images = [
+    {'image': "assets/images/married.jpg"},
+  ];
+  config = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
+  };
   emailSimone = "gsmakeup92@gmail.com";
   emailArianna = "arianna.mostardi@gmail.com";
 
-  constructor(@Inject(PLATFORM_ID) platformId: object){
+  constructor(@Inject(PLATFORM_ID) platformId: object,private imageService:HomeService,private http:HttpClient){
     this.isBrowser.set(isPlatformBrowser(platformId));
   }
   ngOnInit(): void {
@@ -26,9 +54,25 @@ export class HomeComponent implements OnInit,DoCheck{
         this.startTimer();
       }, 1000)
     }
+    this.downloadImages();
   }
   ngDoCheck(): void {
 
+  }
+  slickInit(e:any) {
+    console.log('slick initialized');
+  }
+
+  breakpoint(e:any) {
+    console.log('breakpoint');
+  }
+
+  afterChange(e:any) {
+    console.log('afterChange');
+  }
+
+  beforeChange(e:any) {
+    console.log('beforeChange');
   }
   scrollTo(div:any){
     if(this.isBrowser()) {
@@ -36,6 +80,37 @@ export class HomeComponent implements OnInit,DoCheck{
       const element = elementList[0] as HTMLElement;
       element.scrollIntoView({behavior: 'smooth'})
     }
+
+  }
+
+  downloadImages(): void {
+    console.log('download');
+
+    this.imageService.getImages().subscribe(images => {
+      images.forEach((url:any) => {
+        // this.images.push({'image': url})
+      });
+    });
+  }
+  downloadImage(): void {
+    //   this.images.forEach((url:any) => {
+    //   const a:any = document.createElement('a');
+    //   a.href = url.image;
+    //   a.download = url.image.split('/').pop();
+    //   document.body.appendChild(a);
+    //   a.click();
+    //   document.body.removeChild(a);
+    // });
+       this.images.forEach((url:any) => {
+         this.http.get(url.image, { responseType: 'blob' }).subscribe(blob => {
+           const a = document.createElement('a');
+           const objectUrl = URL.createObjectURL(blob);
+           a.href = objectUrl;
+           a.download = url.image.split('/').pop() || 'download';
+           a.click();
+           URL.revokeObjectURL(objectUrl);
+         });
+    })
 
   }
   goOnPaypal(){

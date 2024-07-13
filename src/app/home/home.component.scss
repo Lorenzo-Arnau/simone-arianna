@@ -81,10 +81,11 @@
       .central-photo{
         background-color: lightgoldenrodyellow;
         margin-bottom: 80px;
-        max-width: 100%;
+        max-width: 100vw;
         img{
-          max-width: 100%;
-          height: 100%;
+          width: 400px;
+          max-width: 100vw;
+
         }
       }
       .last-text{
@@ -144,12 +145,8 @@
     @include flex-col-center;
     background-color: #fff;
     .info-part{
-      padding: 0px 120px;
       @include flex-col-center;
       text-align: center;
-      @media screen and (max-width:576px) {
-        padding:0px 64px
-       }
       .img-container{
         width: 250px;
         height: 250px;
@@ -164,22 +161,16 @@
         @include flex-row-center;
         text-align: center;
       }
-      .name-location{
-        @include flex-row-center;
-        @include subtitleL;
-        margin-bottom: 28px;
-        text-align: center;
-
+      .image-slide{
+        max-width: 460px;
       }
-      .specs{
-        @include paragraphL;
-        @include flex-col-center;
-        gap: 4px;
-        margin-bottom: 28px;
+      .carousel{
+        width: 90vw;
       }
       .button-part{
         @include flex-row-center;
         width: 100%;
+        margin:20px 0px;
         // margin-top: 80px;
         .button{
           @include button-classic;
@@ -187,17 +178,7 @@
         }
       }
     }
-    .maps-part{
-      background-image: url('../../assets/images/mappa-chiesa.png');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 600px;
-      width: 100%;
-      margin-top: 24px;
-      // Ho aggiunto questo filtro, è il più acquerelloso e pastelloto che sono riuscito ad applicare
-      filter: saturate(200%) grayscale(40%) contrast(120%) brightness(96%);
-    }
+
   }
   .gifts-block{
     padding: 120px;
@@ -332,3 +313,4 @@
     }
   }
 }
+
